@@ -1,0 +1,27 @@
+###Post request to create a new user
+POST http://localhost:8080/users/createUser
+Content-Type: application/json
+
+{
+    "email": "Karnish@gmail.com",
+    "password": "Karnish1234"
+
+}
+
+###Get request to fetch all users
+
+GET http://localhost:8080/users/getUser
+
+###Get request to fetch user by id
+GET http://localhost:8080/users/getUserById/3
+
+###Delete request to delete user by id
+DELETE   http://localhost:8080/users/removeUser/2
+
+###Put request to update user by id
+PUT  http://localhost:8080/users/updateUser/5
+Content-Type: application/json
+
+{
+    "email": "Momma@gmail.com"
+}
