@@ -3,10 +3,25 @@ POST http://localhost:8080/users/createUser
 Content-Type: application/json
 
 {
-    "email": "Karnish@gmail.com",
-    "password": "Karnish1234"
+    "email": "sonam1231@gmail.com",
+    "password": "Deep923451"
 
 }
+###Sign in request for user login
+POST http://localhost:8080/users/signin
+Content-Type: application/json
+
+{
+    "email": "sonam123@gmail.com",
+    "password":"Deep92345"
+}
+
+### Get current user
+GET http://localhost:8080/users/whoAmI
+
+
+###Signout request for user logout
+POST http://localhost:8080/users/signout
 
 ###Get request to fetch all users
 
@@ -16,7 +31,7 @@ GET http://localhost:8080/users/getUser
 GET http://localhost:8080/users/getUserById/3
 
 ###Delete request to delete user by id
-DELETE   http://localhost:8080/users/removeUser/2
+DELETE   http://localhost:8080/users/removeUser/4
 
 ###Put request to update user by id
 PUT  http://localhost:8080/users/updateUser/5
