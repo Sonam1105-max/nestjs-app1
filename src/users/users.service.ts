@@ -10,6 +10,7 @@ export class UsersService {
 
     createUser(email: string, password: string) {
         const user = this.userRepository.create({ email, password });
+        console.log('User created:', user);
         return this.userRepository.save(user);
     }
 
@@ -19,6 +20,10 @@ export class UsersService {
 
     findUSerById(id: number){
         return this.userRepository.findOneBy({id});
+    }
+
+    findUsersByEmail(email: string){
+        return this.userRepository.findOneBy({email});
     }
 
    async updateUser(id: number, attrs: Partial<User>){
