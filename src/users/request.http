@@ -12,8 +12,8 @@ POST http://localhost:8080/users/signin
 Content-Type: application/json
 
 {
-    "email": "sonam123@gmail.com",
-    "password":"Deep92345"
+    "email": "sonam1231@gmail.com",
+    "password":"Deep923451"
 }
 
 ### Get current user
