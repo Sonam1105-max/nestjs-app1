@@ -1,0 +1,23 @@
+###Post a report request
+
+POST http://localhost:8080/reports
+Content-Type: application/json
+
+{
+    "price": 2000,
+    "make": "TATA",
+    "model": "HArrier",
+    "year": 2020,
+    "lat": 34.0522,
+    "lng":-118.2437,
+    "mileage": 15000,
+    "approved": true
+}
+
+###Approve a report request
+PATCH http://localhost:8080/reports/6
+Content-Type: application/json
+
+{
+    "approved": true
+}

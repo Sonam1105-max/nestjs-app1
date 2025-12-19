@@ -9,6 +9,7 @@ import { AuthService } from './auth.service';
 import { CurrentUser } from './decorators/currentUser.decorator';
 import { CurrentUserInterceptor } from './interceptor/currentUser.interceptor';
 import { UserGuard } from './guards/userGuard.guard';
+import { ethers} from 'ethers';
 
 
 @Controller('users')
@@ -18,7 +19,10 @@ export class UsersController {
 
     constructor(public UserService: UsersService,
         public authService: AuthService
-    ){}
+    ){
+        
+    }
+   
     @Post('createUser')
     async createUser(@Body() body: CreateUser, @Session() session:any) {
 

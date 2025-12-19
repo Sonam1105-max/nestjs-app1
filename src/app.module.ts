@@ -10,6 +10,8 @@ import { ReportsModule } from './reports/reports.module';
 import { TypeOrmModule } from '@nestjs/typeorm'
 import { User } from './users/user.entity';
 import { Report } from './reports/reports.entity';
+import { APP_INTERCEPTOR } from '@nestjs/core';
+import { CurrentUserInterceptor } from './users/interceptor/currentUser.interceptor';
 
 
 @Module({
@@ -19,8 +21,14 @@ import { Report } from './reports/reports.entity';
     database: 'database.sqlite',
     entities: [User, Report],
     synchronize: true,
-  })]
+  })],
+  //exports:[UsersService, ReportsService],
   // controllers: [AppController, UsersController, ReportsController],
-  // providers: [AppService, UsersService, ReportsService],
+  providers: [
+  {
+    provide: APP_INTERCEPTOR,
+    useClass: CurrentUserInterceptor,
+  },
+]
 })
 export class AppModule {}
